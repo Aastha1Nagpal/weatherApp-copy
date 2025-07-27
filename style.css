@@ -7,25 +7,36 @@
     padding: 0;
 }
 
+html, body {
+    background-color: transparent !important;
+}
+
 body {
     font-family: "Oswald", sans-serif;
     background: url('https://images.unsplash.com/photo-1561484930-998b6a7b22e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-repeat: no-repeat;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     padding: 20px;
     color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: auto;
+    flex: 1 0 auto;
 }
 
 .current-info {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .date-container {
@@ -34,11 +45,6 @@ body {
 
 .date-container .time {
     font-size: 70px;
-}
-
-.date-container #am-pm {
-    font-size: 30px;
-    margin-left: 20px;
 }
 
 .date-container .date {
@@ -75,32 +81,33 @@ body {
 }
 
 .future-forecast {
-    backdrop-filter: blur(5px);
-    padding: 25px;
-    position: relative;
     display: flex;
-    color: white;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    overflow-x: auto;
-    overflow-y: hidden;
     flex-wrap: nowrap;
     gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 25px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
 }
 
 .future-forecast .today {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 1px solid #eee;
     border-radius: 10px;
-    padding: 15px 40px 15px 15px;
-    background: rgba(255, 255, 255, 0.532);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     flex-shrink: 0;
+    min-height: 160px;
 }
 
-.future-forecast .today .day {
+.future-forecast .today .day,
+.weather-forecast .weather-forecast-item .day {
     padding: 6px 16px;
     background: rgba(255, 255, 255, 0.75);
     border-radius: 50px;
@@ -111,13 +118,13 @@ body {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
 }
 
-
 .future-forecast .today .temp {
-    font-size: 32px;
-    padding-top: 15px;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 10px;
 }
 
-.future-forecast .weather-forecast {
+.weather-forecast {
     display: flex;
     flex-wrap: nowrap;
 }
@@ -126,27 +133,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0 10px;
     border: 1px solid white;
     border-radius: 10px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.532);
     min-width: 120px;
+    min-height: 160px;
     flex-shrink: 0;
 }
-
-.weather-forecast .weather-forecast-item .day {
-    padding: 6px 16px;
-    background: rgba(255, 255, 255, 0.75); /* lighter background */
-    border-radius: 50px;
-    text-align: center;
-    font-weight: 600;
-    color: #222; 
-    font-size: 15px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
-}
-
 
 .weather-forecast .weather-forecast-item .temp {
     font-weight: 150;
@@ -158,7 +154,7 @@ body {
 
 .search-bar {
     margin-top: 30px;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -210,60 +206,101 @@ body {
 
 /* Media Queries */
 
-@media only screen and (max-width: 730px) {
-    /* body {
-        overflow-y: auto;
-        overflow-x: hidden;
-    } */
-
-    .container {
-        padding: 16px;
+/* 📱 Mobile (<= 480px) */
+@media only screen and (max-width: 480px) {
+    .date-container .time {
+        font-size: 38px;
     }
 
-    .future-forecast {
-        overflow-x: auto;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        padding-bottom: 20px;
-        gap: 12px;
+    .date-container .date {
+        font-size: 16px;
     }
 
-    .future-forecast .today {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(255, 255, 255, 0.7);
-        transform: scale(1.05);
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        padding: 20px;
-    }
-
-    .future-forecast .today .temp {
-        font-size: 20px;
+    .place-container {
         text-align: center;
     }
 
-    .future-forecast .today .day {
+    .current-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .current-info .others {
+        width: 100%;
+    }
+
+    .current-info .others .weather-item {
+        font-size: 13px;
+    }
+
+    .future-forecast {
+        gap: 8px;
+        padding: 16px 8px;
+    }
+
+    .future-forecast .today {
+        min-height: 140px;
+        padding: 16px;
+    }
+
+    .future-forecast .today .temp {
         font-size: 16px;
-        margin-bottom: 5px;
     }
 
     .weather-forecast .weather-forecast-item {
-        margin: 0 6px;
-        min-width: 110px;
-        flex-shrink: 0;
+        min-width: 100px;
+        padding: 10px;
     }
 
+    .weather-forecast .weather-forecast-item .temp {
+        font-size: 13px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+        gap: 10px;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+
+/* 🧾 Tablet & Medium Screens (<= 730px) */
+@media only screen and (max-width: 730px) {
     .date-container .time {
-        font-size: 48px;
+        font-size: 44px;
     }
 
     .date-container .date {
         font-size: 18px;
     }
 
-    .place-container .time-zone {
+    .container {
+        margin-top: 6vh;
+    }
+
+    .future-forecast {
+        padding: 18px 10px;
+        gap: 10px;
+    }
+
+    .future-forecast .today .temp {
         font-size: 18px;
+    }
+
+    .weather-forecast .weather-forecast-item {
+        min-width: 110px;
+        padding: 12px;
+    }
+
+    .weather-forecast .weather-forecast-item .temp {
+        font-size: 14px;
     }
 
     .search-bar {
@@ -286,11 +323,26 @@ body {
         gap: 12px;
     }
 
-    .place-container {
-        text-align: center;
-    }
-
     .current-info .others .weather-item {
         font-size: 14px;
+    }
+}
+
+/* 💻 Small Laptops & Tablets Landscape (<= 1024px) */
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 16px;
+    }
+
+    .future-forecast {
+        gap: 10px;
+    }
+
+    .weather-forecast .weather-forecast-item {
+        min-width: 115px;
+    }
+
+    .search-bar input {
+        width: 180px;
     }
 }
