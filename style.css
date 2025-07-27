@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    background: url('https://images.unsplash.com/photo-1561484930-998b6a7b22e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.container {
+    padding: 20px;
+    color: white;
+}
+
+.current-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.date-container {
+    font-weight: 100;
+}
+
+.date-container .time {
+    font-size: 70px;
+}
+
+.date-container #am-pm {
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.date-container .date {
+    font-size: 30px;
+}
+
+.place-container {
+    text-align: end;
+}
+
+.place-container .time-zone {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.place-container .country {
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.current-info .others {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.532);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 1.5px solid white;
+}
+
+.current-info .others .weather-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.future-forecast {
+    backdrop-filter: blur(5px);
+    padding: 25px;
+    position: relative;
+    display: flex;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+.future-forecast .today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px 40px 15px 15px;
+    background: rgba(255, 255, 255, 0.532);
+    flex-shrink: 0;
+}
+
+.future-forecast .today .day {
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 600;
+    color: #222;
+    font-size: 15px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+
+.future-forecast .today .temp {
+    font-size: 32px;
+    padding-top: 15px;
+}
+
+.future-forecast .weather-forecast {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.weather-forecast .weather-forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.532);
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.weather-forecast .weather-forecast-item .day {
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.75); /* lighter background */
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 600;
+    color: #222; 
+    font-size: 15px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+
+.weather-forecast .weather-forecast-item .temp {
+    font-weight: 150;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Search Bar */
+
+.search-bar {
+    margin-top: 30px;
+    margin-bottom: 150px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-family: "Oswald", sans-serif;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    width: 200px;
+    font-family: "Oswald", sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+.search-bar input::placeholder {
+    color: #e0e0e0;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+}
+
+.search-bar button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: "Oswald", sans-serif;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    border: 1px solid #ccc;
+}
+
+.search-bar button:hover {
+    background-color: rgba(83, 105, 195, 0.8);
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 730px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .future-forecast {
+        overflow-x: auto;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        padding-bottom: 20px;
+        gap: 12px;
+    }
+
+    .future-forecast .today {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        padding: 20px;
+    }
+
+    .future-forecast .today .temp {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .future-forecast .today .day {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .weather-forecast .weather-forecast-item {
+        margin: 0 6px;
+        min-width: 110px;
+        flex-shrink: 0;
+    }
+
+    .date-container .time {
+        font-size: 48px;
+    }
+
+    .date-container .date {
+        font-size: 18px;
+    }
+
+    .place-container .time-zone {
+        font-size: 18px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .current-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .place-container {
+        text-align: center;
+    }
+
+    .current-info .others .weather-item {
+        font-size: 14px;
+    }
+}
