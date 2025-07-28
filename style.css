@@ -176,24 +176,24 @@ body {
 .search-bar {
     margin: 15px 0;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px;
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: center; /* Center the items horizontally */
+    gap: 10px; /* Space between input and button */
+    padding: 5px; /* Reduced padding for a shorter bar */
     border-radius: 8px;
     font-family: "Oswald", sans-serif;
     flex-wrap: wrap;
-    justify-content: center; /* Center the search bar */
     width: 100%;
-    max-width: 300px; /* Limit overall width */
+    max-width: 250px; /* Broader but shorter overall width */
     margin-left: auto;
     margin-right: auto;
 }
 
 .search-bar input {
-    padding: 8px;
+    padding: 10px; /* Increased padding for broader look */
     border: none;
-    border-radius: 20px; /* Smaller radius for a compact look */
-    width: 60%; /* Reduced width for better fit */
+    border-radius: 20px;
+    width: 100%; /* Full width within the container */
     font-family: "Oswald", sans-serif;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
@@ -209,14 +209,15 @@ body {
 .search-bar button {
     padding: 8px 16px;
     border: none;
-    border-radius: 20px; /* Matching radius for consistency */
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.6);
     color: white;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease;
-    width: 30%; /* Reduced width for balance */
+    width: 50%; /* Reduced width for centered appearance */
     font-size: 14px;
+    margin: 0 auto; /* Center the button */
 }
 
 .search-bar input:focus {
