@@ -119,20 +119,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid #eee;
-    border-radius: 20px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.5); /* Increased scale for a bit bigger Monday */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
     flex-shrink: 0;
-    min-width: 220px; /* Slightly larger width */
-    min-height: 280px; /* Slightly larger height */
-    transition: transform 0.3s ease;
-}
-
-.future-forecast .today:hover {
-    transform: scale(1.55); /* Enhanced hover effect */
+    min-width: 120px;
+    min-height: 160px;
 }
 
 .future-forecast .today .day,
@@ -162,23 +156,18 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 12px;
-    border: 2px solid #eee;
-    border-radius: 20px;
-    padding: 18px;
-    background: rgba(255, 255, 255, 0.7);
-    min-width: 160px;
-    min-height: 220px;
+    margin: 0 5px;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    min-width: 90px;
+    min-height: 130px;
     flex-shrink: 0;
     scroll-snap-align: center;
     flex-grow: 0;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    transition: transform 0.3s ease;
 }
 
-.weather-forecast .weather-forecast-item:hover {
-    transform: scale(1.05);
-}
 .weather-forecast .weather-forecast-item .temp {
     font-weight: 150;
     font-size: 12px;
@@ -329,17 +318,17 @@ body {
     }
 
     .future-forecast .today {
-        min-width: 200px;
-        min-height: 260px;
-        padding: 25px;
-        transform: scale(1.4);
+        min-width: 120px;
+        min-height: 160px;
+        padding: 10px;
+        transform: scale(1.1);
     }
 
     .weather-forecast .weather-forecast-item {
-        min-width: 160px;
-        min-height: 220px;
-        padding: 18px;
-        margin: 0 12px;
+        min-width: 90px;
+        min-height: 130px;
+        padding: 8px;
+        margin: 0 5px;
     }
 
     .search-bar {
