@@ -94,14 +94,18 @@ body {
     gap: 15px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 25px;
+    padding: 25px 0;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     scroll-snap-type: x mandatory;
     scroll-padding-left: 25px;
     -webkit-overflow-scrolling: touch;
     width: 100vw;
-    margin: 0 -25px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     box-sizing: border-box;
 }
 
@@ -253,7 +257,7 @@ body {
 
     .future-forecast {
         gap: 8px;
-        padding: 10px;
+        padding: 10px 0;
         margin: 0 -10px;
         width: 100%;
     }
@@ -313,8 +317,10 @@ body {
 
     .future-forecast {
         gap: 20px;
-        padding: 30px;
-        margin: 0 -30px;
+        padding: 30px 0;
+        scroll-padding-left: 30px;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
 
     .future-forecast .today {
