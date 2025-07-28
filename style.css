@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    padding: 5px; /* Minimal padding for mobile */
+    padding: 5px;
     color: white;
     width: 100%;
     max-width: 100%;
@@ -38,9 +38,10 @@ body {
 
 .current-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center align the content */
     flex-wrap: wrap;
     gap: 10px;
+    text-align: center; /* Center text within flex items */
 }
 
 .date-container {
@@ -56,7 +57,7 @@ body {
 }
 
 .place-container {
-    text-align: end;
+    text-align: center; /* Center align place details */
 }
 
 .place-container .time-zone {
@@ -78,6 +79,7 @@ body {
     margin: 5px 0;
     border: 1px solid white;
     width: 100%;
+    max-width: 200px; /* Limit width for better centering */
 }
 
 .current-info .others .weather-item {
@@ -175,20 +177,23 @@ body {
     margin: 15px 0;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     padding: 8px;
     border-radius: 8px;
     font-family: "Oswald", sans-serif;
     flex-wrap: wrap;
+    justify-content: center; /* Center the search bar */
     width: 100%;
+    max-width: 300px; /* Limit overall width */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .search-bar input {
-    padding: 6px;
+    padding: 8px;
     border: none;
-    border-radius: 50px;
-    width: 100%;
-    max-width: 100%;
+    border-radius: 20px; /* Smaller radius for a compact look */
+    width: 60%; /* Reduced width for better fit */
     font-family: "Oswald", sans-serif;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
@@ -202,14 +207,16 @@ body {
 }
 
 .search-bar button {
-    padding: 6px 12px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 50px;
+    border-radius: 20px; /* Matching radius for consistency */
     background-color: rgba(255, 255, 255, 0.6);
     color: white;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease;
+    width: 30%; /* Reduced width for balance */
+    font-size: 14px;
 }
 
 .search-bar input:focus {
@@ -256,6 +263,18 @@ body {
     .weather-forecast .weather-forecast-item {
         min-width: 90px;
         min-height: 130px;
+    }
+
+    .search-bar {
+        max-width: 250px; /* Further reduce on small screens */
+    }
+
+    .search-bar input {
+        width: 65%;
+    }
+
+    .search-bar button {
+        width: 30%;
     }
 }
 
