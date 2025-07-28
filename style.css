@@ -27,10 +27,10 @@ body {
 }
 
 .container {
-    padding: 5px;
+    padding: 20px; /* Increased padding for laptop */
     color: white;
     width: 100%;
-    max-width: 100%;
+    max-width: 1200px; /* Limit max width for larger screens */
     margin: 0 auto;
     margin-top: auto;
     flex: 1 0 auto;
@@ -49,11 +49,11 @@ body {
 }
 
 .date-container .time {
-    font-size: 36px;
+    font-size: 48px; /* Larger time */
 }
 
 .date-container .date {
-    font-size: 16px;
+    font-size: 20px; /* Larger date */
 }
 
 .place-container {
@@ -61,12 +61,12 @@ body {
 }
 
 .place-container .time-zone {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 100;
 }
 
 .place-container .country {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 550;
 }
 
@@ -74,12 +74,12 @@ body {
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.532);
-    padding: 10px;
-    border-radius: 8px;
-    margin: 5px 0;
+    padding: 15px; /* Increased padding */
+    border-radius: 10px;
+    margin: 10px 0;
     border: 1px solid white;
     width: 100%;
-    max-width: 200px; /* Limit width for better centering */
+    max-width: 250px; /* Slightly wider */
 }
 
 .current-info .others .weather-item {
@@ -91,16 +91,18 @@ body {
 .future-forecast {
     display: flex;
     flex-wrap: nowrap;
-    gap: 8px;
+    gap: 12px; /* Increased gap */
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 10px;
+    padding: 20px; /* Increased padding */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     scroll-snap-type: x mandatory;
-    scroll-padding-left: 10px;
+    scroll-padding-left: 20px;
     -webkit-overflow-scrolling: touch;
-    width: 100%;
+    width: 100%; /* Full width */
+    margin: 0 -20px; /* Extend beyond container to cover screen */
+    box-sizing: border-box;
 }
 
 .future-forecast::-webkit-scrollbar {
@@ -118,14 +120,14 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 12px; /* Larger radius */
+    padding: 15px; /* Increased padding */
     background: rgba(255, 255, 255, 0.7);
-    transform: scale(1.05);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    transform: scale(1.2); /* Larger first day */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
     flex-shrink: 0;
-    min-width: 100px;
-    min-height: 140px;
+    min-width: 150px; /* Larger size */
+    min-height: 200px; /* Larger size */
 }
 
 .future-forecast .today .day,
@@ -155,13 +157,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 5px;
+    margin: 0 8px; /* Increased margin */
     border: 1px solid white;
-    border-radius: 8px;
-    padding: 8px;
+    border-radius: 10px;
+    padding: 12px; /* Increased padding */
     background: rgba(255, 255, 255, 0.6);
-    min-width: 90px;
-    min-height: 130px;
+    min-width: 130px; /* Larger size */
+    min-height: 180px; /* Larger size */
     flex-shrink: 0;
     scroll-snap-align: center;
     flex-grow: 0;
@@ -236,7 +238,7 @@ body {
     }
 
     .date-container .time {
-        font-size: 36px;
+        font-size: 48px;
     }
 
     .date-container .date {
@@ -308,10 +310,22 @@ body {
 
     .future-forecast {
         gap: 8px;
+        padding: 10px;
+        margin: 0 -10px;
+    }
+
+    .future-forecast .today {
+        min-width: 100px;
+        min-height: 140px;
+        padding: 10px;
+        transform: scale(1.05);
     }
 
     .weather-forecast .weather-forecast-item {
-        min-width: 100px;
+        min-width: 90px;
+        min-height: 130px;
+        padding: 8px;
+        margin: 0 5px;
     }
 }
 
