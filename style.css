@@ -26,7 +26,6 @@ body {
     padding: 20px;
     color: white;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     margin-top: auto;
     flex: 1 0 auto;
@@ -91,7 +90,7 @@ body {
     backdrop-filter: blur(4px);
     scroll-snap-type: x mandatory;
     scroll-padding-left: 16px;
-    -webkit-overflow-scrolling: touch; /* Better iOS scrolling */
+    -webkit-overflow-scrolling: touch;
 }
 
 .future-forecast::-webkit-scrollbar {
@@ -103,7 +102,6 @@ body {
     border-radius: 5px;
 }
 
-
 .future-forecast .today {
     display: flex;
     flex-direction: column;
@@ -113,10 +111,11 @@ body {
     border-radius: 10px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.7);
-    transform: scale(1.05);
+    transform: scale(1.1); /* Increased size for Monday */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     flex-shrink: 0;
-    min-height: 160px;
+    min-width: 140px;
+    min-height: 180px;
 }
 
 .future-forecast .today .day,
@@ -152,12 +151,12 @@ body {
     border-radius: 10px;
     padding: 18px;
     background: rgba(255, 255, 255, 0.6);
-    min-width: 140px;
-    min-height: 180px;
+    min-width: 130px;
+    min-height: 170px;
     flex-shrink: 0;
     scroll-snap-align: center;
+    flex-grow: 0; /* Prevent expansion */
 }
-
 
 .weather-forecast .weather-forecast-item .temp {
     font-weight: 150;
@@ -166,7 +165,6 @@ body {
 }
 
 /* Search Bar */
-
 .search-bar {
     margin-top: 30px;
     margin-bottom: 100px;
@@ -224,12 +222,11 @@ body {
 /* 📱 Mobile (<= 480px) - IMPROVED */
 @media only screen and (max-width: 480px) {
     body {
-        overflow-x: hidden; /* Prevent horizontal scroll */
+        overflow-x: hidden;
     }
     
     .container {
-        padding: 15px;
-        margin-top: 0;
+        padding: 10px;
     }
 
     .date-container .time {
@@ -277,44 +274,34 @@ body {
 
     .search-bar input {
         width: 100%;
-        max-width: 280px;
+        max-width: 100%;
         padding: 12px 20px;
         font-size: 16px;
     }
 
     .search-bar button {
         width: 100%;
-        max-width: 280px;
+        max-width: 100%;
         padding: 12px 20px;
     }
 
-    /* Mobile forecast improvements */
     .future-forecast {
-        margin: 20px -15px; /* Extend to screen edges */
-        padding: 20px 15px;
-        gap: 12px;
+        margin: 20px -10px;
+        padding: 15px 10px;
+        gap: 10px;
     }
 
     .future-forecast .today {
         min-width: 120px;
-        min-height: 140px;
-        padding: 15px 8px;
-        transform: scale(1.02);
-    }
-
-    .future-forecast .today .temp {
-        font-size: 16px;
-        padding-top: 5px;
-    }
-
-    .weather-forecast {
-        gap: 8px;
+        min-height: 160px;
+        padding: 15px;
+        transform: scale(1.1);
     }
 
     .weather-forecast .weather-forecast-item {
         min-width: 110px;
-        min-height: 160px;
-        padding: 12px 6px;
+        min-height: 150px;
+        padding: 10px;
         margin: 0 4px;
     }
 
